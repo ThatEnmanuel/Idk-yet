@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🪖 HARDWARE MONITOR - TACTICAL OPS</title>
+    
+    <!-- Google Fonts - JetBrains Mono -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <style>
+        :root {
+            /* Colores primarios */
+            --military-green: #4A5D23;
+            --steel-gray: #2F3349;
+            --carbon-black: #1A1A1A;
+            
+            /* Colores de acento */
+            --tactical-orange: #FF6B35;
+            --alert-yellow: #FFD23F;
+            --critical-red: #DC143C;
+            
+            /* Fondos */
+            --dark-bg: #0D1117;
+            --olive-dark: #3C4142;
+            --panel-bg: #1E2329;
+            
+            /* Estados */
+            --success-green: #00FF41;
+            --warning-amber: #FFBF00;
+            --danger-red: #FF073A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--success-green);
+            font-family: 'JetBrains Mono', 'Consolas', 'Source Code Pro', monospace;
+            line-height: 1.4;
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-size: 14px;
+        }
+
+        /* Header Militar */
+        .tactical-header {
+            background: linear-gradient(180deg, var(--military-green) 0%, var(--steel-gray) 100%);
+            border-bottom: 3px solid var(--tactical-orange);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 0 20px rgba(0,0,0,0.8);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--alert-yellow);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(255, 210, 63, 0.5);
+        }
+
+        .mission-status {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            font-size: 12px;
+            color: var(--success-green);
+            font-weight: 600;
+        }
+
+        .mission-time {
+            background: var(--panel-bg);
+            border: 2px solid var(--tactical-orange);
+            padding: 8px 16px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .system-status {
+            background: var(--panel-bg);
+            border: 2px solid var(--success-green);
+            padding: 8px 16px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .system-status.degraded {
+            border-color: var(--warning-amber);
+            color: var(--warning-amber);
+        }
+
+        .system-status.offline {
+            border-color: var(--danger-red);
+            color: var(--danger-red);
+        }
+
+        /* Main Container - Centro de Comando */
+        .command-center {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Grid de Inteligencia */
+        .intel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Paneles de Inteligencia */
+        .intel-panel {
+            background: var(--panel-bg);
+            border: 2px solid var(--military-green);
+            border-left: 4px solid var(--tactical-orange);
+            padding: 1.5rem;
+            box-shadow: 0 0 15px rgba(0,0,0,0.8);
+        }
+
+        .intel-panel h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--alert-yellow);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--military-green);
+            padding-bottom: 0.5rem;
+        }
+
+        /* Gauges Militares */
+        .gauge-military {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            border: 3px solid var(--steel-gray);
+            border-radius: 50%;
+            background: 
+                radial-gradient(circle, var(--dark-bg) 60%, transparent 60%),
+                conic-gradient(
+                    var(--success-green) 0deg 120deg,
+                    var(--warning-amber) 120deg 240deg,
+                    var(--danger-red) 240deg 360deg
+                );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gauge-needle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 3px;
+            height: 80px;
+            background: var(--tactical-orange);
+            transform-origin: bottom center;
+            transform: translate(-50%, -100%) rotate(-120deg);
+            transition: transform 0.5s ease;
+            box-shadow: 0 0 10px rgba(255, 107, 53, 0.8);
+        }
+
+        .gauge-center {
+            width: 20px;
+            height: 20px;
+            background: var(--steel-gray);
+            border: 2px solid var(--tactical-orange);
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        .gauge-value {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--success-green);
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+        }
+
+        /* Network Grid Militar */
+        .network-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .network-stat {
+            background: var(--olive-dark);
+            border: 2px solid var(--military-green);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .network-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--success-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .network-label {
+            font-size: 12px;
+            color: var(--alert-yellow);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        /* Panel de Logs de Misión */
+        .command-log {
+            background: var(--panel-bg);
+            border: 2px solid var(--military-green);
+            border-top: 4px solid var(--tactical-orange);
+            padding: 1.5rem;
+            margin-top: 2rem;
+            box-shadow: 0 0 15px rgba(0,0,0,0.8);
+        }
+
+        .command-log h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--alert-yellow);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--military-green);
+            padding-bottom: 0.5rem;
+        }
+
+        #log-output {
+            background: var(--dark-bg);
+            border: 1px solid var(--steel-gray);
+            padding: 1rem;
+            height: 200px;
+            overflow-y: auto;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .log-entry {
+            margin-bottom: 0.5rem;
+            padding: 0.25rem 0;
+        }
+
+        .log-entry.info {
+            color: var(--success-green);
+        }
+
+        .log-entry.warning {
+            color: var(--warning-amber);
+        }
+
+        .log-entry.error {
+            color: var(--danger-red);
+        }
+
+        .log-entry.alert {
+            color: var(--critical-red);
+            font-weight: 700;
+        }
+
+        /* Alertas DEFCON */
+        .alert-defcon {
+            background: var(--critical-red);
+            color: white;
+            padding: 8px 16px;
+            border-left: 4px solid var(--alert-yellow);
+            font-weight: 700;
+            text-transform: uppercase;
+            animation: defcon-blink 1s infinite;
+            margin: 1rem 0;
+            font-size: 12px;
+        }
+
+        @keyframes defcon-blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.7; }
+        }
+
+        /* Responsive Design Militar */
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 0 1rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .header-title {
+                font-size: 20px;
+            }
+
+            .mission-status {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .command-center {
+                padding: 1rem;
+            }
+
+            .intel-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .gauge-military {
+                width: 150px;
+                height: 150px;
+            }
+
+            .gauge-needle {
+                height: 60px;
+            }
+
+            .network-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scrollbar Militar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--dark-bg);
+            border: 1px solid var(--steel-gray);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--military-green);
+            border: 1px solid var(--tactical-orange);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--tactical-orange);
+        }
+
+        /* Loading Militar */
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+            color: var(--alert-yellow);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .loading.show {
+            display: block;
+        }
+
+        /* Animación de Radar */
+        @keyframes radar-sweep {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .radar-sweep {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 2px;
+            height: 100px;
+            background: linear-gradient(to top, transparent, var(--tactical-orange));
+            transform-origin: bottom center;
+            animation: radar-sweep 2s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Militar -->
+    <header class="tactical-header">
+        <div class="header-content">
+            <h1 class="header-title">🪖 HARDWARE MONITOR - TACTICAL OPS</h1>
+            <div class="mission-status">
+                <div class="mission-time" id="mission-time">00:00:00</div>
+                <div class="system-status" id="system-status">OPERATIONAL</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Centro de Comando -->
+    <main class="command-center">
+        <div class="intel-grid">
+            <!-- CPU SECTOR -->
+            <div class="intel-panel cpu-panel">
+                <h3>CPU SECTOR</h3>
+                <div class="gauge-military" id="cpu-gauge">
+                    <div class="gauge-needle" id="cpu-needle"></div>
+                    <div class="gauge-center"></div>
+                    <div class="gauge-value" id="cpu-value">0%</div>
+                    <div class="radar-sweep"></div>
+                </div>
+            </div>
+            
+            <!-- MEMORY SECTOR -->
+            <div class="intel-panel memory-panel">
+                <h3>MEMORY SECTOR</h3>
+                <div class="gauge-military" id="memory-gauge">
+                    <div class="gauge-needle" id="memory-needle"></div>
+                    <div class="gauge-center"></div>
+                    <div class="gauge-value" id="memory-value">0%</div>
+                    <div class="radar-sweep"></div>
+                </div>
+            </div>
+            
+            <!-- DISK SECTOR -->
+            <div class="intel-panel disk-panel">
+                <h3>DISK SECTOR</h3>
+                <div class="gauge-military" id="disk-gauge">
+                    <div class="gauge-needle" id="disk-needle"></div>
+                    <div class="gauge-center"></div>
+                    <div class="gauge-value" id="disk-value">0%</div>
+                    <div class="radar-sweep"></div>
+                </div>
+            </div>
+            
+            <!-- NETWORK SECTOR -->
+            <div class="intel-panel network-panel">
+                <h3>NETWORK SECTOR</h3>
+                <div class="network-grid">
+                    <div class="network-stat">
+                        <div class="network-value" id="network-sent">0 MB</div>
+                        <div class="network-label">SENT</div>
+                    </div>
+                    <div class="network-stat">
+                        <div class="network-value" id="network-received">0 MB</div>
+                        <div class="network-label">RECEIVED</div>
+                    </div>
+                </div>
+                <div class="chart-container" style="margin-top: 1rem;">
+                    <canvas id="networkChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Panel de Logs de Misión -->
+        <div class="command-log">
+            <h3>MISSION LOG</h3>
+            <div id="log-output">
+                <div class="log-entry info">[SYSTEM] TACTICAL OPS INITIALIZED</div>
+                <div class="log-entry info">[SYSTEM] HARDWARE SCAN IN PROGRESS</div>
+            </div>
+        </div>
+
+        <!-- Loading Militar -->
+        <div class="loading" id="loading">
+            <div>🔄 UPDATING TACTICAL DATA...</div>
+        </div>
+    </main>
+
+    <!-- Custom JavaScript Militar -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html> 

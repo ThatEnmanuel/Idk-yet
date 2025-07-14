@@ -1,0 +1,825 @@
+2025-07-13 20:42:50,311 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.180:5000
+2025-07-13 20:42:50,311 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-13 20:44:23,162 - root - INFO - Request de1d1856-7683-43a3-9546-c5745f7875b6 iniciado: GET /
+2025-07-13 20:44:23,163 - app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\hardware_monitor\app\routes.py", line 43, in index
+    return render_template('index.html')
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\templating.py", line 64, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: index.html
+2025-07-13 20:44:23,201 - root - INFO - Request de1d1856-7683-43a3-9546-c5745f7875b6 completado: 500
+2025-07-13 20:44:23,202 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:44:23] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-07-13 20:44:25,271 - root - INFO - Request c51a2e8a-9744-4980-902f-0613554fdde0 iniciado: GET /metrics
+2025-07-13 20:44:25,272 - root - INFO - Request c51a2e8a-9744-4980-902f-0613554fdde0 completado: 200
+2025-07-13 20:44:25,274 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:44:25] "GET /metrics HTTP/1.1" 200 -
+2025-07-13 20:44:27,308 - root - INFO - Request 7e5ed8e5-4d26-42ec-94dd-79d43e74a163 iniciado: GET /api/health/basic
+2025-07-13 20:44:27,309 - root - INFO - Request 7e5ed8e5-4d26-42ec-94dd-79d43e74a163 completado: 200
+2025-07-13 20:44:27,312 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:44:27] "GET /api/health/basic HTTP/1.1" 200 -
+2025-07-13 20:44:29,367 - root - INFO - Request 3918bf11-a2da-4ea5-92b6-2848f7bacda3 iniciado: POST /api/login
+2025-07-13 20:44:29,367 - root - INFO - Request 3918bf11-a2da-4ea5-92b6-2848f7bacda3 completado: 200
+2025-07-13 20:44:29,368 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:44:29] "POST /api/login HTTP/1.1" 200 -
+2025-07-13 20:44:31,434 - root - INFO - Request 598c980f-c0c3-4b7a-866f-7f91a9369a32 iniciado: GET /api/health
+2025-07-13 20:44:31,541 - root - INFO - Request 598c980f-c0c3-4b7a-866f-7f91a9369a32 completado: 500
+2025-07-13 20:44:31,542 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:44:31] "[35m[1mGET /api/health HTTP/1.1[0m" 500 -
+2025-07-13 20:44:33,588 - root - INFO - Request 4926ab03-8578-4312-ab93-cd12033ff1e1 iniciado: GET /api/stats
+2025-07-13 20:44:34,592 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:44:34,604 - root - INFO - Request 4926ab03-8578-4312-ab93-cd12033ff1e1 completado: 500
+2025-07-13 20:44:34,605 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:44:34] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 20:44:36,665 - root - INFO - Request bebfe42a-8a2d-4642-9eff-1e333358202d iniciado: GET /api/cpu
+2025-07-13 20:44:37,667 - root - INFO - Request bebfe42a-8a2d-4642-9eff-1e333358202d completado: 200
+2025-07-13 20:44:37,668 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:44:37] "GET /api/cpu HTTP/1.1" 200 -
+2025-07-13 20:44:39,690 - root - INFO - Request 7f919f50-e212-499f-b059-287109b23a27 iniciado: GET /api/ram
+2025-07-13 20:44:39,694 - root - INFO - Request 7f919f50-e212-499f-b059-287109b23a27 completado: 200
+2025-07-13 20:44:39,695 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:44:39] "GET /api/ram HTTP/1.1" 200 -
+2025-07-13 20:44:41,724 - root - INFO - Request faa11058-d717-4969-8183-181f2afd64a3 iniciado: GET /api/disk
+2025-07-13 20:44:41,726 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:44:41,727 - root - ERROR - Error en api_disk: bad escape (end of pattern) at position 3
+2025-07-13 20:44:41,728 - root - INFO - Request faa11058-d717-4969-8183-181f2afd64a3 completado: 500
+2025-07-13 20:44:41,729 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:44:41] "[35m[1mGET /api/disk HTTP/1.1[0m" 500 -
+2025-07-13 20:44:43,764 - root - INFO - Request b40d90b3-a30b-444f-869a-a946ad5a34e4 iniciado: GET /api/network
+2025-07-13 20:44:43,777 - root - INFO - Request b40d90b3-a30b-444f-869a-a946ad5a34e4 completado: 200
+2025-07-13 20:44:43,778 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:44:43] "GET /api/network HTTP/1.1" 200 -
+2025-07-13 20:44:45,840 - root - INFO - Request 06d66c7c-6985-461e-84d0-bcd95c146740 iniciado: GET /api/stats
+2025-07-13 20:44:46,847 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:44:46,888 - root - INFO - Request 06d66c7c-6985-461e-84d0-bcd95c146740 completado: 500
+2025-07-13 20:44:46,890 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:44:46] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 20:44:48,966 - root - INFO - Request a6649c6d-025a-47c5-ac8d-88e05f617182 iniciado: GET /api/stats
+2025-07-13 20:44:49,971 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:44:49,984 - root - INFO - Request a6649c6d-025a-47c5-ac8d-88e05f617182 completado: 500
+2025-07-13 20:44:49,984 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:44:49] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 20:44:52,021 - root - INFO - Request 3fc0a425-9dd2-4e2b-9731-c1d633978e49 iniciado: GET /api/stats
+2025-07-13 20:44:53,031 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:44:53,084 - root - INFO - Request 3fc0a425-9dd2-4e2b-9731-c1d633978e49 completado: 500
+2025-07-13 20:44:53,091 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:44:53] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 20:44:55,142 - root - INFO - Request 0975517a-9c6e-482d-a741-2b54a1c036e7 iniciado: GET /api/stats
+2025-07-13 20:44:56,156 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:44:56,167 - root - INFO - Request 0975517a-9c6e-482d-a741-2b54a1c036e7 completado: 500
+2025-07-13 20:44:56,168 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:44:56] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 20:44:58,234 - root - INFO - Request 09ecfe3f-99b1-4561-b17a-7247473737cd iniciado: GET /api/stats
+2025-07-13 20:44:59,240 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:44:59,259 - root - INFO - Request 09ecfe3f-99b1-4561-b17a-7247473737cd completado: 500
+2025-07-13 20:44:59,260 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:44:59] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 20:45:01,288 - root - INFO - Request 667fc3fa-513d-4f85-96f5-106bbac108f2 iniciado: GET /api/stats
+2025-07-13 20:45:02,293 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:45:02,308 - root - INFO - Request 667fc3fa-513d-4f85-96f5-106bbac108f2 completado: 500
+2025-07-13 20:45:02,309 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:45:02] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 20:45:04,338 - root - INFO - Request 3e6c0c77-8564-4d6d-865e-7c178bda96fb iniciado: GET /api/stats
+2025-07-13 20:45:05,342 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:45:05,359 - root - INFO - Request 3e6c0c77-8564-4d6d-865e-7c178bda96fb completado: 500
+2025-07-13 20:45:05,360 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:45:05] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 20:45:07,411 - root - INFO - Request f8b3a47c-b2cb-42bc-a38c-92cd06842bcf iniciado: GET /api/stats
+2025-07-13 20:45:08,415 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:45:08,428 - root - INFO - Request f8b3a47c-b2cb-42bc-a38c-92cd06842bcf completado: 500
+2025-07-13 20:45:08,429 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:45:08] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 20:45:10,485 - root - INFO - Request af1ddf21-e0b0-44ff-9b9e-1df68cdaca8e iniciado: GET /api/stats
+2025-07-13 20:45:11,489 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:45:11,503 - root - INFO - Request af1ddf21-e0b0-44ff-9b9e-1df68cdaca8e completado: 500
+2025-07-13 20:45:11,504 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:45:11] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 20:45:13,566 - root - INFO - Request 08f3f663-c94d-4be6-bae9-9d90bc21010d iniciado: GET /api/stats
+2025-07-13 20:45:14,571 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:45:14,583 - root - INFO - Request 08f3f663-c94d-4be6-bae9-9d90bc21010d completado: 500
+2025-07-13 20:45:14,585 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:45:14] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 20:45:16,618 - root - INFO - Request 2672f56f-49fa-4a72-8235-be01f2aa905c iniciado: GET /api/stats
+2025-07-13 20:45:17,622 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:45:17,636 - root - INFO - Request 2672f56f-49fa-4a72-8235-be01f2aa905c completado: 500
+2025-07-13 20:45:17,637 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:45:17] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 20:45:19,681 - root - INFO - Request dd561222-853e-4149-82b2-d445cb305d0e iniciado: GET /api/stats
+2025-07-13 20:45:20,686 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:45:20,699 - root - INFO - Request dd561222-853e-4149-82b2-d445cb305d0e completado: 500
+2025-07-13 20:45:20,701 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:45:20] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 20:45:22,731 - root - INFO - Request fbce02df-1ad9-4288-95a3-6f65b30c8673 iniciado: GET /api/stats
+2025-07-13 20:45:23,736 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:45:23,759 - root - INFO - Request fbce02df-1ad9-4288-95a3-6f65b30c8673 completado: 500
+2025-07-13 20:45:23,760 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:45:23] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 20:45:25,797 - root - INFO - Request b8acea2f-1e00-484a-9fee-02a8aa1990cf iniciado: GET /api/stats
+2025-07-13 20:45:26,803 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:45:26,815 - root - INFO - Request b8acea2f-1e00-484a-9fee-02a8aa1990cf completado: 500
+2025-07-13 20:45:26,816 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:45:26] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 20:45:28,863 - root - INFO - Request 3e6e6e1d-ddb8-40b4-b995-780dda3a40e7 iniciado: GET /api/stats
+2025-07-13 20:45:29,867 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:45:29,881 - root - INFO - Request 3e6e6e1d-ddb8-40b4-b995-780dda3a40e7 completado: 500
+2025-07-13 20:45:29,882 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:45:29] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 20:47:36,252 - root - INFO - Request b3986515-2c58-414f-9474-9bb467004a33 iniciado: GET /
+2025-07-13 20:47:36,253 - app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\hardware_monitor\app\routes.py", line 43, in index
+    return render_template('index.html')
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\templating.py", line 64, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: index.html
+2025-07-13 20:47:36,258 - root - INFO - Request b3986515-2c58-414f-9474-9bb467004a33 completado: 500
+2025-07-13 20:47:36,259 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:47:36] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-07-13 20:47:38,290 - root - INFO - Request cb44aee1-f424-45c7-bd27-cda7ec03450a iniciado: GET /metrics
+2025-07-13 20:47:38,294 - root - INFO - Request cb44aee1-f424-45c7-bd27-cda7ec03450a completado: 200
+2025-07-13 20:47:38,295 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:47:38] "GET /metrics HTTP/1.1" 200 -
+2025-07-13 20:47:40,335 - root - INFO - Request 3aed2f21-dd24-4cc2-b571-7c247882a9ff iniciado: GET /api/health/basic
+2025-07-13 20:47:40,335 - root - INFO - Request 3aed2f21-dd24-4cc2-b571-7c247882a9ff completado: 200
+2025-07-13 20:47:40,336 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:47:40] "GET /api/health/basic HTTP/1.1" 200 -
+2025-07-13 20:47:42,400 - root - INFO - Request c5ec0a93-3eba-4f19-a13d-d3ca4479a01a iniciado: POST /api/login
+2025-07-13 20:47:42,400 - root - INFO - Request c5ec0a93-3eba-4f19-a13d-d3ca4479a01a completado: 200
+2025-07-13 20:47:42,401 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:47:42] "POST /api/login HTTP/1.1" 200 -
+2025-07-13 20:47:44,453 - root - INFO - Request f23b4d1d-74d4-4c6a-89de-885a1256fa14 iniciado: GET /api/health
+2025-07-13 20:47:44,558 - root - INFO - Request f23b4d1d-74d4-4c6a-89de-885a1256fa14 completado: 500
+2025-07-13 20:47:44,559 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:47:44] "[35m[1mGET /api/health HTTP/1.1[0m" 500 -
+2025-07-13 20:47:46,602 - root - INFO - Request 12cdeb9c-b4fb-4a3c-b8fe-3af6a7d3042b iniciado: GET /api/stats
+2025-07-13 20:47:47,607 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:47:47,618 - root - INFO - Request 12cdeb9c-b4fb-4a3c-b8fe-3af6a7d3042b completado: 500
+2025-07-13 20:47:47,619 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:47:47] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 20:47:49,681 - root - INFO - Request 5a4f5c3a-136b-40cd-87c8-20d4938cfa64 iniciado: GET /api/cpu
+2025-07-13 20:47:50,682 - root - INFO - Request 5a4f5c3a-136b-40cd-87c8-20d4938cfa64 completado: 200
+2025-07-13 20:47:50,683 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:47:50] "GET /api/cpu HTTP/1.1" 200 -
+2025-07-13 20:47:52,751 - root - INFO - Request 90301204-1497-421f-9379-a092a07ee743 iniciado: GET /api/ram
+2025-07-13 20:47:52,756 - root - INFO - Request 90301204-1497-421f-9379-a092a07ee743 completado: 200
+2025-07-13 20:47:52,756 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:47:52] "GET /api/ram HTTP/1.1" 200 -
+2025-07-13 20:47:54,771 - root - INFO - Request d66e0b55-2e64-4242-be45-53097ba16853 iniciado: GET /api/disk
+2025-07-13 20:47:54,771 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:47:54,772 - root - ERROR - Error en api_disk: bad escape (end of pattern) at position 3
+2025-07-13 20:47:54,772 - root - INFO - Request d66e0b55-2e64-4242-be45-53097ba16853 completado: 500
+2025-07-13 20:47:54,773 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:47:54] "[35m[1mGET /api/disk HTTP/1.1[0m" 500 -
+2025-07-13 20:47:56,803 - root - INFO - Request c313a3a6-0e34-461e-bcee-b47b99d3d2a5 iniciado: GET /api/network
+2025-07-13 20:47:56,814 - root - INFO - Request c313a3a6-0e34-461e-bcee-b47b99d3d2a5 completado: 200
+2025-07-13 20:47:56,814 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:47:56] "GET /api/network HTTP/1.1" 200 -
+2025-07-13 20:47:58,866 - root - INFO - Request 2ea4a670-89ce-4bdd-8295-d18dbb75a4d3 iniciado: GET /api/stats
+2025-07-13 20:47:59,871 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:47:59,882 - root - INFO - Request 2ea4a670-89ce-4bdd-8295-d18dbb75a4d3 completado: 500
+2025-07-13 20:47:59,883 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:47:59] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 20:48:01,931 - root - INFO - Request f5c3d9e7-a1e5-446a-bdb5-5346482a939e iniciado: GET /api/stats
+2025-07-13 20:48:02,937 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:48:02,948 - root - INFO - Request f5c3d9e7-a1e5-446a-bdb5-5346482a939e completado: 500
+2025-07-13 20:48:02,949 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:48:02] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 20:48:04,999 - root - INFO - Request 21a63c16-0b55-4fb6-a209-ba13383542be iniciado: GET /api/stats
+2025-07-13 20:48:06,004 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:48:06,015 - root - INFO - Request 21a63c16-0b55-4fb6-a209-ba13383542be completado: 500
+2025-07-13 20:48:06,017 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:48:06] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 20:48:08,061 - root - INFO - Request c45fd54b-054c-4ab0-b69f-9a1f356f9866 iniciado: GET /api/stats
+2025-07-13 20:48:09,066 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:48:09,078 - root - INFO - Request c45fd54b-054c-4ab0-b69f-9a1f356f9866 completado: 500
+2025-07-13 20:48:09,079 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:48:09] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 20:48:11,115 - root - INFO - Request a206608d-b58f-436d-8772-9250308c30b7 iniciado: GET /api/stats
+2025-07-13 20:48:12,119 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:48:12,130 - root - INFO - Request a206608d-b58f-436d-8772-9250308c30b7 completado: 500
+2025-07-13 20:48:12,132 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:48:12] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 20:48:14,180 - root - INFO - Request 2753b724-cccd-4d6b-a275-94d0b3412ae1 iniciado: GET /api/stats
+2025-07-13 20:48:15,186 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:48:15,200 - root - INFO - Request 2753b724-cccd-4d6b-a275-94d0b3412ae1 completado: 500
+2025-07-13 20:48:15,201 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:48:15] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 20:48:17,255 - root - INFO - Request 87032f05-3336-4519-a82a-f63707c05228 iniciado: GET /api/stats
+2025-07-13 20:48:18,259 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:48:18,272 - root - INFO - Request 87032f05-3336-4519-a82a-f63707c05228 completado: 500
+2025-07-13 20:48:18,272 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:48:18] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 20:48:20,308 - root - INFO - Request d37f84c6-ab12-4f31-9dec-b0132bbd7fb8 iniciado: GET /api/stats
+2025-07-13 20:48:21,314 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:48:21,327 - root - INFO - Request d37f84c6-ab12-4f31-9dec-b0132bbd7fb8 completado: 500
+2025-07-13 20:48:21,329 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:48:21] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 20:48:23,380 - root - INFO - Request 94cf0793-deb4-4db9-877c-3a375a60ba19 iniciado: GET /api/stats
+2025-07-13 20:48:24,385 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:48:24,398 - root - INFO - Request 94cf0793-deb4-4db9-877c-3a375a60ba19 completado: 500
+2025-07-13 20:48:24,399 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:48:24] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 20:48:26,431 - root - INFO - Request 191c8491-58c7-4fc4-9293-69a7f5ab90b4 iniciado: GET /api/stats
+2025-07-13 20:48:27,434 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:48:27,445 - root - INFO - Request 191c8491-58c7-4fc4-9293-69a7f5ab90b4 completado: 500
+2025-07-13 20:48:27,446 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:48:27] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 20:48:29,477 - root - INFO - Request 5cb8c24f-4d67-4ec6-871c-fbb1f9df5233 iniciado: GET /api/stats
+2025-07-13 20:48:30,480 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:48:30,491 - root - INFO - Request 5cb8c24f-4d67-4ec6-871c-fbb1f9df5233 completado: 500
+2025-07-13 20:48:30,492 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:48:30] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 20:48:32,541 - root - INFO - Request 823cce5b-1eaa-47fd-8acf-6b5af244a275 iniciado: GET /api/stats
+2025-07-13 20:48:33,545 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:48:33,556 - root - INFO - Request 823cce5b-1eaa-47fd-8acf-6b5af244a275 completado: 500
+2025-07-13 20:48:33,557 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:48:33] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 20:48:35,609 - root - INFO - Request 5bf0f157-1648-4ff2-afda-f7d1dfa03678 iniciado: GET /api/stats
+2025-07-13 20:48:36,612 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:48:36,623 - root - INFO - Request 5bf0f157-1648-4ff2-afda-f7d1dfa03678 completado: 500
+2025-07-13 20:48:36,624 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:48:36] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 20:48:38,675 - root - INFO - Request 844ebd2a-98c5-4420-bbac-dbabd375f310 iniciado: GET /api/stats
+2025-07-13 20:48:39,680 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:48:39,691 - root - INFO - Request 844ebd2a-98c5-4420-bbac-dbabd375f310 completado: 500
+2025-07-13 20:48:39,693 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:48:39] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 20:48:41,751 - root - INFO - Request 8d92612d-28bb-42a0-92b9-ca608cc4d741 iniciado: GET /api/stats
+2025-07-13 20:48:42,757 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 20:48:42,777 - root - INFO - Request 8d92612d-28bb-42a0-92b9-ca608cc4d741 completado: 500
+2025-07-13 20:48:42,778 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:48:42] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:01:27,180 - root - INFO - Request fdb1fa04-dba4-43cb-950c-3d58777982e9 iniciado: GET /
+2025-07-13 21:01:27,181 - app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\hardware_monitor\app\routes.py", line 43, in index
+    return jsonify(response_data), status_code
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\templating.py", line 64, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: index.html
+2025-07-13 21:01:27,184 - root - INFO - Request fdb1fa04-dba4-43cb-950c-3d58777982e9 completado: 500
+2025-07-13 21:01:27,185 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:01:27] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-07-13 21:01:29,233 - root - INFO - Request f1429f32-6586-4f42-9221-f6a2bc21c6c9 iniciado: GET /metrics
+2025-07-13 21:01:29,236 - root - INFO - Request f1429f32-6586-4f42-9221-f6a2bc21c6c9 completado: 200
+2025-07-13 21:01:29,237 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:01:29] "GET /metrics HTTP/1.1" 200 -
+2025-07-13 21:01:31,299 - root - INFO - Request ed873566-9a8a-4675-8f3c-456dd1287772 iniciado: GET /api/health/basic
+2025-07-13 21:01:31,300 - root - INFO - Request ed873566-9a8a-4675-8f3c-456dd1287772 completado: 200
+2025-07-13 21:01:31,300 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:01:31] "GET /api/health/basic HTTP/1.1" 200 -
+2025-07-13 21:01:33,349 - root - INFO - Request bd69e880-0536-4337-a30b-aeeeb3d2f033 iniciado: POST /api/login
+2025-07-13 21:01:33,350 - root - INFO - Request bd69e880-0536-4337-a30b-aeeeb3d2f033 completado: 200
+2025-07-13 21:01:33,351 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:01:33] "POST /api/login HTTP/1.1" 200 -
+2025-07-13 21:01:35,395 - root - INFO - Request ea7f43d2-f547-4ddd-940d-22535fdc8f7f iniciado: GET /api/health
+2025-07-13 21:01:35,500 - root - INFO - Request ea7f43d2-f547-4ddd-940d-22535fdc8f7f completado: 500
+2025-07-13 21:01:35,501 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:01:35] "[35m[1mGET /api/health HTTP/1.1[0m" 500 -
+2025-07-13 21:01:37,557 - root - INFO - Request 09857da3-53e5-4368-a60c-cadbf68f543d iniciado: GET /api/stats
+2025-07-13 21:01:38,562 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:01:38,576 - root - INFO - Request 09857da3-53e5-4368-a60c-cadbf68f543d completado: 500
+2025-07-13 21:01:38,577 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:01:38] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:01:40,610 - root - INFO - Request 7f32753c-b5cb-4d42-88b0-9400e3f6096b iniciado: GET /api/cpu
+2025-07-13 21:01:41,611 - root - INFO - Request 7f32753c-b5cb-4d42-88b0-9400e3f6096b completado: 200
+2025-07-13 21:01:41,612 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:01:41] "GET /api/cpu HTTP/1.1" 200 -
+2025-07-13 21:01:43,649 - root - INFO - Request e25fc6fe-90cc-4f65-84a3-82141cb9d2e3 iniciado: GET /api/ram
+2025-07-13 21:01:43,652 - root - INFO - Request e25fc6fe-90cc-4f65-84a3-82141cb9d2e3 completado: 200
+2025-07-13 21:01:43,653 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:01:43] "GET /api/ram HTTP/1.1" 200 -
+2025-07-13 21:01:45,694 - root - INFO - Request acd3723e-0793-4eb3-90d6-5024eded8a27 iniciado: GET /api/disk
+2025-07-13 21:01:45,695 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:01:45,696 - root - ERROR - Error en api_disk: bad escape (end of pattern) at position 3
+2025-07-13 21:01:45,696 - root - INFO - Request acd3723e-0793-4eb3-90d6-5024eded8a27 completado: 500
+2025-07-13 21:01:45,697 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:01:45] "[35m[1mGET /api/disk HTTP/1.1[0m" 500 -
+2025-07-13 21:01:47,778 - root - INFO - Request f3016ab9-0c31-4412-bafb-90385da60bd0 iniciado: GET /api/network
+2025-07-13 21:01:47,790 - root - INFO - Request f3016ab9-0c31-4412-bafb-90385da60bd0 completado: 200
+2025-07-13 21:01:47,791 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:01:47] "GET /api/network HTTP/1.1" 200 -
+2025-07-13 21:01:49,829 - root - INFO - Request 7fc2b1bc-145b-47d4-96ed-b451fb25adae iniciado: GET /api/stats
+2025-07-13 21:01:50,833 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:01:50,845 - root - INFO - Request 7fc2b1bc-145b-47d4-96ed-b451fb25adae completado: 500
+2025-07-13 21:01:50,846 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:01:50] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:01:52,898 - root - INFO - Request 68ce1ba0-a919-4b14-9fb5-f75e22393690 iniciado: GET /api/stats
+2025-07-13 21:01:53,902 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:01:53,915 - root - INFO - Request 68ce1ba0-a919-4b14-9fb5-f75e22393690 completado: 500
+2025-07-13 21:01:53,915 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:01:53] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:01:55,946 - root - INFO - Request 447d5551-c19e-4687-9130-9efe92fc75fe iniciado: GET /api/stats
+2025-07-13 21:01:56,949 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:01:56,963 - root - INFO - Request 447d5551-c19e-4687-9130-9efe92fc75fe completado: 500
+2025-07-13 21:01:56,964 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:01:56] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:01:59,009 - root - INFO - Request c35855d3-3cdd-479d-9d1a-9c173e43f0a6 iniciado: GET /api/stats
+2025-07-13 21:02:00,013 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:02:00,029 - root - INFO - Request c35855d3-3cdd-479d-9d1a-9c173e43f0a6 completado: 500
+2025-07-13 21:02:00,030 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:02:00] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:02:02,077 - root - INFO - Request 0fcf0f31-472e-4e02-8a08-875af0c06470 iniciado: GET /api/stats
+2025-07-13 21:02:03,081 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:02:03,095 - root - INFO - Request 0fcf0f31-472e-4e02-8a08-875af0c06470 completado: 500
+2025-07-13 21:02:03,096 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:02:03] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:02:05,121 - root - INFO - Request 82c56181-0ecc-437a-a9ce-177e69caf6ae iniciado: GET /api/stats
+2025-07-13 21:02:06,125 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:02:06,137 - root - INFO - Request 82c56181-0ecc-437a-a9ce-177e69caf6ae completado: 500
+2025-07-13 21:02:06,138 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:02:06] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:02:08,175 - root - INFO - Request 032823fe-7de8-442f-bf03-822ee3b9853c iniciado: GET /api/stats
+2025-07-13 21:02:09,179 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:02:09,192 - root - INFO - Request 032823fe-7de8-442f-bf03-822ee3b9853c completado: 500
+2025-07-13 21:02:09,193 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:02:09] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:02:11,238 - root - INFO - Request bb3cb12b-2e4c-44e5-8f37-cb1abefd10c9 iniciado: GET /api/stats
+2025-07-13 21:02:12,242 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:02:12,255 - root - INFO - Request bb3cb12b-2e4c-44e5-8f37-cb1abefd10c9 completado: 500
+2025-07-13 21:02:12,256 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:02:12] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:02:14,287 - root - INFO - Request 979fab06-f190-40de-bf19-f7d29462d00e iniciado: GET /api/stats
+2025-07-13 21:02:15,291 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:02:15,304 - root - INFO - Request 979fab06-f190-40de-bf19-f7d29462d00e completado: 500
+2025-07-13 21:02:15,305 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:02:15] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:02:17,367 - root - INFO - Request f445249e-e31c-43ca-8956-ccf5870cdffe iniciado: GET /api/stats
+2025-07-13 21:02:18,371 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:02:18,383 - root - INFO - Request f445249e-e31c-43ca-8956-ccf5870cdffe completado: 500
+2025-07-13 21:02:18,385 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:02:18] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:02:20,419 - root - INFO - Request 6e2b13ef-6eb1-4d77-83df-54bd478a752c iniciado: GET /api/stats
+2025-07-13 21:02:21,423 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:02:21,435 - root - INFO - Request 6e2b13ef-6eb1-4d77-83df-54bd478a752c completado: 500
+2025-07-13 21:02:21,436 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:02:21] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:02:23,502 - root - INFO - Request 4ef51413-5726-4a5c-a60e-d24c8a9c2a02 iniciado: GET /api/stats
+2025-07-13 21:02:24,506 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:02:24,518 - root - INFO - Request 4ef51413-5726-4a5c-a60e-d24c8a9c2a02 completado: 500
+2025-07-13 21:02:24,519 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:02:24] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:02:26,565 - root - INFO - Request dedbe784-d6ba-4136-b62e-f1a09ae65bf7 iniciado: GET /api/stats
+2025-07-13 21:02:27,569 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:02:27,584 - root - INFO - Request dedbe784-d6ba-4136-b62e-f1a09ae65bf7 completado: 500
+2025-07-13 21:02:27,585 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:02:27] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:02:29,635 - root - INFO - Request 65b8ea5b-ff70-4777-9c43-6973856d3796 iniciado: GET /api/stats
+2025-07-13 21:02:30,639 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:02:30,652 - root - INFO - Request 65b8ea5b-ff70-4777-9c43-6973856d3796 completado: 500
+2025-07-13 21:02:30,653 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:02:30] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:02:32,686 - root - INFO - Request 2f2f4edc-e589-430e-ad95-4cce800087d2 iniciado: GET /api/stats
+2025-07-13 21:02:33,690 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:02:33,703 - root - INFO - Request 2f2f4edc-e589-430e-ad95-4cce800087d2 completado: 500
+2025-07-13 21:02:33,703 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:02:33] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:16:53,063 - root - INFO - Request adbae45b-138c-4bbb-880d-6581fed3a4aa iniciado: GET /
+2025-07-13 21:16:53,063 - app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\hardware_monitor\app\routes.py", line 43, in index
+    return jsonify(response_data), status_code
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\templating.py", line 64, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: index.html
+2025-07-13 21:16:53,067 - root - INFO - Request adbae45b-138c-4bbb-880d-6581fed3a4aa completado: 500
+2025-07-13 21:16:53,067 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:16:53] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-07-13 21:16:55,129 - root - INFO - Request 18ebc6d8-4b81-4cd4-b111-8631ff38dc75 iniciado: GET /metrics
+2025-07-13 21:16:55,132 - root - INFO - Request 18ebc6d8-4b81-4cd4-b111-8631ff38dc75 completado: 200
+2025-07-13 21:16:55,133 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:16:55] "GET /metrics HTTP/1.1" 200 -
+2025-07-13 21:16:57,161 - root - INFO - Request e9eba5dc-9ee0-4b97-8362-829673663a1e iniciado: GET /api/health/basic
+2025-07-13 21:16:57,162 - root - INFO - Request e9eba5dc-9ee0-4b97-8362-829673663a1e completado: 200
+2025-07-13 21:16:57,163 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:16:57] "GET /api/health/basic HTTP/1.1" 200 -
+2025-07-13 21:16:59,209 - root - INFO - Request 631daec3-4a37-45a6-b734-04a52b2cf292 iniciado: POST /api/login
+2025-07-13 21:16:59,210 - root - INFO - Request 631daec3-4a37-45a6-b734-04a52b2cf292 completado: 200
+2025-07-13 21:16:59,212 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:16:59] "POST /api/login HTTP/1.1" 200 -
+2025-07-13 21:17:01,246 - root - INFO - Request 1a9a02e4-14d5-44ca-9dfe-0e1045cc1b01 iniciado: GET /api/health
+2025-07-13 21:17:01,350 - root - INFO - Request 1a9a02e4-14d5-44ca-9dfe-0e1045cc1b01 completado: 500
+2025-07-13 21:17:01,350 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:17:01] "[35m[1mGET /api/health HTTP/1.1[0m" 500 -
+2025-07-13 21:17:03,378 - root - INFO - Request df4eeffc-c8bf-4f9a-99dd-7099e9bbbd90 iniciado: GET /api/stats
+2025-07-13 21:17:04,382 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:17:04,394 - root - INFO - Request df4eeffc-c8bf-4f9a-99dd-7099e9bbbd90 completado: 500
+2025-07-13 21:17:04,395 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:17:04] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:17:06,450 - root - INFO - Request 7b8c3a50-49f3-4e8a-af78-634344396920 iniciado: GET /api/cpu
+2025-07-13 21:17:07,451 - root - INFO - Request 7b8c3a50-49f3-4e8a-af78-634344396920 completado: 200
+2025-07-13 21:17:07,452 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:17:07] "GET /api/cpu HTTP/1.1" 200 -
+2025-07-13 21:17:09,496 - root - INFO - Request 37fe6ccf-5d05-4d1c-b782-13fd8bf703ad iniciado: GET /api/ram
+2025-07-13 21:17:09,501 - root - INFO - Request 37fe6ccf-5d05-4d1c-b782-13fd8bf703ad completado: 200
+2025-07-13 21:17:09,502 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:17:09] "GET /api/ram HTTP/1.1" 200 -
+2025-07-13 21:17:11,561 - root - INFO - Request b610340c-e609-4825-b43a-3433d0bf01b0 iniciado: GET /api/disk
+2025-07-13 21:17:11,563 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:17:11,563 - root - ERROR - Error en api_disk: bad escape (end of pattern) at position 3
+2025-07-13 21:17:11,564 - root - INFO - Request b610340c-e609-4825-b43a-3433d0bf01b0 completado: 500
+2025-07-13 21:17:11,565 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:17:11] "[35m[1mGET /api/disk HTTP/1.1[0m" 500 -
+2025-07-13 21:17:13,629 - root - INFO - Request 3bc70908-ce24-4737-96d5-bd9d8d10d65c iniciado: GET /api/network
+2025-07-13 21:17:13,641 - root - INFO - Request 3bc70908-ce24-4737-96d5-bd9d8d10d65c completado: 200
+2025-07-13 21:17:13,642 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:17:13] "GET /api/network HTTP/1.1" 200 -
+2025-07-13 21:17:15,677 - root - INFO - Request 69587a43-0f82-409e-a75f-b7fc79c786c5 iniciado: GET /api/stats
+2025-07-13 21:17:16,682 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:17:16,694 - root - INFO - Request 69587a43-0f82-409e-a75f-b7fc79c786c5 completado: 500
+2025-07-13 21:17:16,695 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:17:16] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:17:18,731 - root - INFO - Request 5eb442de-c1b2-4f05-9058-4d0ba8f26f61 iniciado: GET /api/stats
+2025-07-13 21:17:19,735 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:17:19,748 - root - INFO - Request 5eb442de-c1b2-4f05-9058-4d0ba8f26f61 completado: 500
+2025-07-13 21:17:19,749 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:17:19] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:17:21,798 - root - INFO - Request 212e3bc4-4989-449e-94c9-8a4e9d2a3883 iniciado: GET /api/stats
+2025-07-13 21:17:22,803 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:17:22,817 - root - INFO - Request 212e3bc4-4989-449e-94c9-8a4e9d2a3883 completado: 500
+2025-07-13 21:17:22,817 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:17:22] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:17:24,852 - root - INFO - Request 9fda34e4-7af9-4866-9267-24d9f5d3fffa iniciado: GET /api/stats
+2025-07-13 21:17:25,860 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:17:25,885 - root - INFO - Request 9fda34e4-7af9-4866-9267-24d9f5d3fffa completado: 500
+2025-07-13 21:17:25,886 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:17:25] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:17:27,945 - root - INFO - Request c7f42b2d-7837-469c-a0d6-20e85ea0d2a0 iniciado: GET /api/stats
+2025-07-13 21:17:28,951 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:17:28,968 - root - INFO - Request c7f42b2d-7837-469c-a0d6-20e85ea0d2a0 completado: 500
+2025-07-13 21:17:28,968 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:17:28] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:17:30,996 - root - INFO - Request 471fdc60-4010-4e49-b018-6bf114f393aa iniciado: GET /api/stats
+2025-07-13 21:17:32,001 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:17:32,014 - root - INFO - Request 471fdc60-4010-4e49-b018-6bf114f393aa completado: 500
+2025-07-13 21:17:32,015 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:17:32] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:17:34,061 - root - INFO - Request 94bc02b1-a7f9-4615-bae1-7f645241d342 iniciado: GET /api/stats
+2025-07-13 21:17:35,065 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:17:35,080 - root - INFO - Request 94bc02b1-a7f9-4615-bae1-7f645241d342 completado: 500
+2025-07-13 21:17:35,081 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:17:35] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:17:37,126 - root - INFO - Request adf8c336-6e6a-42ad-a291-c31f0625ed67 iniciado: GET /api/stats
+2025-07-13 21:17:38,131 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:17:38,148 - root - INFO - Request adf8c336-6e6a-42ad-a291-c31f0625ed67 completado: 500
+2025-07-13 21:17:38,150 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:17:38] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:17:40,192 - root - INFO - Request 8b307901-2537-4e3f-8e0d-7cd010a4f931 iniciado: GET /api/stats
+2025-07-13 21:17:41,196 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:17:41,209 - root - INFO - Request 8b307901-2537-4e3f-8e0d-7cd010a4f931 completado: 500
+2025-07-13 21:17:41,209 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:17:41] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:17:43,274 - root - INFO - Request 41e63847-9577-4798-a6d1-f015818283c4 iniciado: GET /api/stats
+2025-07-13 21:17:44,278 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:17:44,291 - root - INFO - Request 41e63847-9577-4798-a6d1-f015818283c4 completado: 500
+2025-07-13 21:17:44,292 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:17:44] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:17:46,356 - root - INFO - Request 3bf6113a-38cd-4f79-ba91-f872a9426fbb iniciado: GET /api/stats
+2025-07-13 21:17:47,360 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:17:47,373 - root - INFO - Request 3bf6113a-38cd-4f79-ba91-f872a9426fbb completado: 500
+2025-07-13 21:17:47,374 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:17:47] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:17:49,424 - root - INFO - Request 10375d76-be5f-4855-8555-f25e9caf1b9e iniciado: GET /api/stats
+2025-07-13 21:17:50,428 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:17:50,441 - root - INFO - Request 10375d76-be5f-4855-8555-f25e9caf1b9e completado: 500
+2025-07-13 21:17:50,442 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:17:50] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:17:52,492 - root - INFO - Request 5ae7dfcf-e5f6-4417-9c9c-2373db753fee iniciado: GET /api/stats
+2025-07-13 21:17:53,496 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:17:53,510 - root - INFO - Request 5ae7dfcf-e5f6-4417-9c9c-2373db753fee completado: 500
+2025-07-13 21:17:53,511 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:17:53] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:17:55,539 - root - INFO - Request dc36a07e-a1f8-47a9-8cb5-db612cf62fc8 iniciado: GET /api/stats
+2025-07-13 21:17:56,543 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:17:56,555 - root - INFO - Request dc36a07e-a1f8-47a9-8cb5-db612cf62fc8 completado: 500
+2025-07-13 21:17:56,556 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:17:56] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:17:58,587 - root - INFO - Request 0db67390-7cda-466e-a218-49a1bb90eb24 iniciado: GET /api/stats
+2025-07-13 21:17:59,591 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:17:59,604 - root - INFO - Request 0db67390-7cda-466e-a218-49a1bb90eb24 completado: 500
+2025-07-13 21:17:59,605 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:17:59] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:19:31,704 - root - INFO - Request 6ee050f4-7c65-4feb-9de1-efb4a738c851 iniciado: GET /
+2025-07-13 21:19:31,705 - app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\hardware_monitor\app\routes.py", line 43, in index
+    return jsonify(response_data), status_code
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\templating.py", line 64, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: index.html
+2025-07-13 21:19:31,710 - root - INFO - Request 6ee050f4-7c65-4feb-9de1-efb4a738c851 completado: 500
+2025-07-13 21:19:31,711 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:19:31] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-07-13 21:19:32,113 - root - INFO - Request 63814b04-79bc-41a8-b98e-17a5e22870e2 iniciado: GET /favicon.ico
+2025-07-13 21:19:32,113 - root - INFO - Request 63814b04-79bc-41a8-b98e-17a5e22870e2 completado: 404
+2025-07-13 21:19:32,116 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:19:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-13 21:19:46,117 - root - INFO - Request f6b73935-0f14-4584-a4bd-7a8dfe9f763a iniciado: GET /api/health/basic
+2025-07-13 21:19:46,117 - root - INFO - Request f6b73935-0f14-4584-a4bd-7a8dfe9f763a completado: 401
+2025-07-13 21:19:46,118 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:19:46] "[31m[1mGET /api/health/basic HTTP/1.1[0m" 401 -
+2025-07-13 21:19:53,337 - root - INFO - Request e309adb6-85ad-4820-abb5-d7a2a99bca1a iniciado: GET /api/health/basic
+2025-07-13 21:19:53,338 - root - INFO - Request e309adb6-85ad-4820-abb5-d7a2a99bca1a completado: 200
+2025-07-13 21:19:53,339 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:19:53] "GET /api/health/basic HTTP/1.1" 200 -
+2025-07-13 21:22:12,057 - root - INFO - Request 529a5d77-93b2-4921-8593-256529ed323e iniciado: GET /
+2025-07-13 21:22:12,057 - app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\hardware_monitor\app\routes.py", line 43, in index
+    return jsonify(response_data), status_code
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\templating.py", line 64, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: index.html
+2025-07-13 21:22:12,060 - root - INFO - Request 529a5d77-93b2-4921-8593-256529ed323e completado: 500
+2025-07-13 21:22:12,061 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:22:12] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-07-13 21:22:14,108 - root - INFO - Request dfdb0daa-90ca-40a8-8a33-ef6c8a284682 iniciado: GET /metrics
+2025-07-13 21:22:14,111 - root - INFO - Request dfdb0daa-90ca-40a8-8a33-ef6c8a284682 completado: 200
+2025-07-13 21:22:14,111 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:22:14] "GET /metrics HTTP/1.1" 200 -
+2025-07-13 21:22:16,126 - root - INFO - Request 27f9ce52-07e5-436d-853e-b477a39569ba iniciado: GET /api/health/basic
+2025-07-13 21:22:16,126 - root - INFO - Request 27f9ce52-07e5-436d-853e-b477a39569ba completado: 200
+2025-07-13 21:22:16,127 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:22:16] "GET /api/health/basic HTTP/1.1" 200 -
+2025-07-13 21:22:18,154 - root - INFO - Request 702c2532-b5b4-4877-b9c2-089fba0ba14a iniciado: POST /api/login
+2025-07-13 21:22:18,155 - root - INFO - Request 702c2532-b5b4-4877-b9c2-089fba0ba14a completado: 200
+2025-07-13 21:22:18,155 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:22:18] "POST /api/login HTTP/1.1" 200 -
+2025-07-13 21:22:20,204 - root - INFO - Request 890157db-7be3-4179-9f9f-3392861966ae iniciado: GET /api/health
+2025-07-13 21:22:20,308 - root - INFO - Request 890157db-7be3-4179-9f9f-3392861966ae completado: 500
+2025-07-13 21:22:20,309 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:22:20] "[35m[1mGET /api/health HTTP/1.1[0m" 500 -
+2025-07-13 21:22:22,353 - root - INFO - Request 6e63d2a1-a7c2-477c-98f3-4add1f552757 iniciado: GET /api/stats
+2025-07-13 21:22:23,357 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:22:23,370 - root - INFO - Request 6e63d2a1-a7c2-477c-98f3-4add1f552757 completado: 500
+2025-07-13 21:22:23,371 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:22:23] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:22:25,417 - root - INFO - Request 037c0725-a72e-4523-9e66-3f947c98924b iniciado: GET /api/cpu
+2025-07-13 21:22:26,420 - root - INFO - Request 037c0725-a72e-4523-9e66-3f947c98924b completado: 200
+2025-07-13 21:22:26,421 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:22:26] "GET /api/cpu HTTP/1.1" 200 -
+2025-07-13 21:22:28,470 - root - INFO - Request 6f111577-db4a-4b4b-9255-4f0440898f12 iniciado: GET /api/ram
+2025-07-13 21:22:28,472 - root - INFO - Request 6f111577-db4a-4b4b-9255-4f0440898f12 completado: 200
+2025-07-13 21:22:28,473 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:22:28] "GET /api/ram HTTP/1.1" 200 -
+2025-07-13 21:22:30,518 - root - INFO - Request 07a2ab16-01f9-4ac7-9954-689fbb932807 iniciado: GET /api/disk
+2025-07-13 21:22:30,519 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:22:30,519 - root - ERROR - Error en api_disk: bad escape (end of pattern) at position 3
+2025-07-13 21:22:30,519 - root - INFO - Request 07a2ab16-01f9-4ac7-9954-689fbb932807 completado: 500
+2025-07-13 21:22:30,520 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:22:30] "[35m[1mGET /api/disk HTTP/1.1[0m" 500 -
+2025-07-13 21:22:32,601 - root - INFO - Request 3c6b5bfc-8e4f-45fc-a98b-385535583b81 iniciado: GET /api/network
+2025-07-13 21:22:32,611 - root - INFO - Request 3c6b5bfc-8e4f-45fc-a98b-385535583b81 completado: 200
+2025-07-13 21:22:32,612 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:22:32] "GET /api/network HTTP/1.1" 200 -
+2025-07-13 21:22:34,651 - root - INFO - Request 49757ebb-6319-48bb-9e25-adccf548b0e5 iniciado: GET /api/stats
+2025-07-13 21:22:35,655 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:22:35,667 - root - INFO - Request 49757ebb-6319-48bb-9e25-adccf548b0e5 completado: 500
+2025-07-13 21:22:35,668 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:22:35] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:22:37,699 - root - INFO - Request a8be0eaa-adde-4e80-9ad0-6f6c849a333f iniciado: GET /api/stats
+2025-07-13 21:22:38,703 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:22:38,716 - root - INFO - Request a8be0eaa-adde-4e80-9ad0-6f6c849a333f completado: 500
+2025-07-13 21:22:38,717 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:22:38] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:22:40,767 - root - INFO - Request 3fd7f6aa-60f3-41a3-a4ad-f00c42bcbb97 iniciado: GET /api/stats
+2025-07-13 21:22:41,771 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:22:41,784 - root - INFO - Request 3fd7f6aa-60f3-41a3-a4ad-f00c42bcbb97 completado: 500
+2025-07-13 21:22:41,784 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:22:41] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:22:43,832 - root - INFO - Request c393601a-8af0-408d-85f5-50f85229fa3d iniciado: GET /api/stats
+2025-07-13 21:22:44,836 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:22:44,848 - root - INFO - Request c393601a-8af0-408d-85f5-50f85229fa3d completado: 500
+2025-07-13 21:22:44,849 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:22:44] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:22:46,913 - root - INFO - Request b8b80818-bcaa-46fc-ba73-4a633f2dd885 iniciado: GET /api/stats
+2025-07-13 21:22:47,918 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:22:47,930 - root - INFO - Request b8b80818-bcaa-46fc-ba73-4a633f2dd885 completado: 500
+2025-07-13 21:22:47,931 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:22:47] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:22:49,997 - root - INFO - Request f1701eb5-e3cd-4b77-8474-78477c19007a iniciado: GET /api/stats
+2025-07-13 21:22:51,002 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:22:51,015 - root - INFO - Request f1701eb5-e3cd-4b77-8474-78477c19007a completado: 500
+2025-07-13 21:22:51,015 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:22:51] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:22:53,047 - root - INFO - Request da7f5d5a-a1c7-463c-a3ef-2ed84eff0ab8 iniciado: GET /api/stats
+2025-07-13 21:22:54,052 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:22:54,065 - root - INFO - Request da7f5d5a-a1c7-463c-a3ef-2ed84eff0ab8 completado: 500
+2025-07-13 21:22:54,066 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:22:54] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:22:56,096 - root - INFO - Request 33640356-bb77-47f1-a9a9-25d931751f3b iniciado: GET /api/stats
+2025-07-13 21:22:57,100 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:22:57,113 - root - INFO - Request 33640356-bb77-47f1-a9a9-25d931751f3b completado: 500
+2025-07-13 21:22:57,114 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:22:57] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:22:59,162 - root - INFO - Request 7caac1bf-af85-467a-8466-734786fcdda0 iniciado: GET /api/stats
+2025-07-13 21:23:00,166 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:23:00,178 - root - INFO - Request 7caac1bf-af85-467a-8466-734786fcdda0 completado: 500
+2025-07-13 21:23:00,179 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:23:00] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:23:02,230 - root - INFO - Request c3167934-bfa4-471e-ac09-afe940f151be iniciado: GET /api/stats
+2025-07-13 21:23:03,234 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:23:03,247 - root - INFO - Request c3167934-bfa4-471e-ac09-afe940f151be completado: 500
+2025-07-13 21:23:03,248 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:23:03] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:23:05,264 - root - INFO - Request ec355673-40c3-4c66-83d0-627f2c649898 iniciado: GET /api/stats
+2025-07-13 21:23:06,267 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:23:06,282 - root - INFO - Request ec355673-40c3-4c66-83d0-627f2c649898 completado: 500
+2025-07-13 21:23:06,282 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:23:06] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:23:08,342 - root - INFO - Request cd91c26d-20ff-488a-9d55-04926fce6ddd iniciado: GET /api/stats
+2025-07-13 21:23:09,347 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:23:09,360 - root - INFO - Request cd91c26d-20ff-488a-9d55-04926fce6ddd completado: 500
+2025-07-13 21:23:09,361 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:23:09] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:23:11,426 - root - INFO - Request ce2981ad-df36-40b0-a505-8f673cfcccb9 iniciado: GET /api/stats
+2025-07-13 21:23:12,430 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:23:12,442 - root - INFO - Request ce2981ad-df36-40b0-a505-8f673cfcccb9 completado: 500
+2025-07-13 21:23:12,443 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:23:12] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:23:14,495 - root - INFO - Request 14da5a68-2556-47f1-b4d6-b58033b94c67 iniciado: GET /api/stats
+2025-07-13 21:23:15,498 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:23:15,511 - root - INFO - Request 14da5a68-2556-47f1-b4d6-b58033b94c67 completado: 500
+2025-07-13 21:23:15,512 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:23:15] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:23:17,575 - root - INFO - Request a4cfd02d-73b0-4679-aa0b-babd4e246964 iniciado: GET /api/stats
+2025-07-13 21:23:18,579 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:23:18,593 - root - INFO - Request a4cfd02d-73b0-4679-aa0b-babd4e246964 completado: 500
+2025-07-13 21:23:18,594 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:23:18] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:42:25,668 - root - INFO - Request 8bf971b8-3ded-414c-b61e-310c1a8a8b91 iniciado: GET /
+2025-07-13 21:42:25,669 - app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\hardware_monitor\app\routes.py", line 43, in index
+    return jsonify(response_data), status_code
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\templating.py", line 64, in get_source
+    return self._get_source_fast(environment, template)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\x\OneDrive\Escritorio\Proyectos\.venv\Lib\site-packages\flask\templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: index.html
+2025-07-13 21:42:25,672 - root - INFO - Request 8bf971b8-3ded-414c-b61e-310c1a8a8b91 completado: 500
+2025-07-13 21:42:25,673 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:42:25] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-07-13 21:42:27,687 - root - INFO - Request 7fcfa7cb-2dd4-4a41-ad08-b05ae681b9b5 iniciado: GET /metrics
+2025-07-13 21:42:27,690 - root - INFO - Request 7fcfa7cb-2dd4-4a41-ad08-b05ae681b9b5 completado: 200
+2025-07-13 21:42:27,692 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:42:27] "GET /metrics HTTP/1.1" 200 -
+2025-07-13 21:42:29,717 - root - INFO - Request 8a4b97bd-f547-4e28-a34a-db4a580a7ac0 iniciado: GET /api/health/basic
+2025-07-13 21:42:29,718 - root - INFO - Request 8a4b97bd-f547-4e28-a34a-db4a580a7ac0 completado: 200
+2025-07-13 21:42:29,718 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:42:29] "GET /api/health/basic HTTP/1.1" 200 -
+2025-07-13 21:42:31,767 - root - INFO - Request 2db78135-f720-4728-a575-4359f8353c46 iniciado: POST /api/login
+2025-07-13 21:42:31,768 - root - INFO - Request 2db78135-f720-4728-a575-4359f8353c46 completado: 200
+2025-07-13 21:42:31,770 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:42:31] "POST /api/login HTTP/1.1" 200 -
+2025-07-13 21:42:33,785 - root - INFO - Request f8bd30b3-9741-4697-8308-ef52603597f3 iniciado: GET /api/health
+2025-07-13 21:42:33,890 - root - INFO - Request f8bd30b3-9741-4697-8308-ef52603597f3 completado: 500
+2025-07-13 21:42:33,891 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:42:33] "[35m[1mGET /api/health HTTP/1.1[0m" 500 -
+2025-07-13 21:42:35,914 - root - INFO - Request 13d10186-e09d-499a-afdd-652710b03303 iniciado: GET /api/stats
+2025-07-13 21:42:36,919 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:42:36,934 - root - INFO - Request 13d10186-e09d-499a-afdd-652710b03303 completado: 500
+2025-07-13 21:42:36,934 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:42:36] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:42:38,962 - root - INFO - Request 6e7838ad-bd9a-4bdc-9055-782b47bb8655 iniciado: GET /api/cpu
+2025-07-13 21:42:39,963 - root - INFO - Request 6e7838ad-bd9a-4bdc-9055-782b47bb8655 completado: 200
+2025-07-13 21:42:39,964 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:42:39] "GET /api/cpu HTTP/1.1" 200 -
+2025-07-13 21:42:42,000 - root - INFO - Request 844f56ec-af57-4336-9589-8911f6d317b8 iniciado: GET /api/ram
+2025-07-13 21:42:42,003 - root - INFO - Request 844f56ec-af57-4336-9589-8911f6d317b8 completado: 200
+2025-07-13 21:42:42,004 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:42:42] "GET /api/ram HTTP/1.1" 200 -
+2025-07-13 21:42:44,031 - root - INFO - Request b31506f6-fd2c-4dae-9e72-4f007e3f3499 iniciado: GET /api/disk
+2025-07-13 21:42:44,032 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:42:44,033 - root - ERROR - Error en api_disk: bad escape (end of pattern) at position 3
+2025-07-13 21:42:44,033 - root - INFO - Request b31506f6-fd2c-4dae-9e72-4f007e3f3499 completado: 500
+2025-07-13 21:42:44,034 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:42:44] "[35m[1mGET /api/disk HTTP/1.1[0m" 500 -
+2025-07-13 21:42:46,093 - root - INFO - Request 6407e20b-86f2-4673-8529-aabc6051d3c9 iniciado: GET /api/network
+2025-07-13 21:42:46,106 - root - INFO - Request 6407e20b-86f2-4673-8529-aabc6051d3c9 completado: 200
+2025-07-13 21:42:46,107 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:42:46] "GET /api/network HTTP/1.1" 200 -
+2025-07-13 21:42:48,164 - root - INFO - Request a7c13fe0-59a2-4fbd-8a8a-5d8bc79d7b95 iniciado: GET /api/stats
+2025-07-13 21:42:49,170 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:42:49,183 - root - INFO - Request a7c13fe0-59a2-4fbd-8a8a-5d8bc79d7b95 completado: 500
+2025-07-13 21:42:49,184 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:42:49] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:42:51,230 - root - INFO - Request 63661a6e-2473-4a6e-9733-2bc3a56291a7 iniciado: GET /api/stats
+2025-07-13 21:42:52,234 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:42:52,246 - root - INFO - Request 63661a6e-2473-4a6e-9733-2bc3a56291a7 completado: 500
+2025-07-13 21:42:52,247 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:42:52] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:42:54,263 - root - INFO - Request 2a612448-7b1e-4474-8bfc-0e6bd3ee43cd iniciado: GET /api/stats
+2025-07-13 21:42:55,267 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:42:55,280 - root - INFO - Request 2a612448-7b1e-4474-8bfc-0e6bd3ee43cd completado: 500
+2025-07-13 21:42:55,281 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:42:55] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:42:57,313 - root - INFO - Request 40097e21-2179-4c54-b3a6-313b4f921793 iniciado: GET /api/stats
+2025-07-13 21:42:58,318 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:42:58,333 - root - INFO - Request 40097e21-2179-4c54-b3a6-313b4f921793 completado: 500
+2025-07-13 21:42:58,334 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:42:58] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:43:00,361 - root - INFO - Request e0bff1f6-10e4-4d18-88f6-b1bcbe676a8c iniciado: GET /api/stats
+2025-07-13 21:43:01,367 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:43:01,381 - root - INFO - Request e0bff1f6-10e4-4d18-88f6-b1bcbe676a8c completado: 500
+2025-07-13 21:43:01,382 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:43:01] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:43:03,426 - root - INFO - Request 132ebd70-3e07-401c-847e-462543483d2a iniciado: GET /api/stats
+2025-07-13 21:43:04,431 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:43:04,445 - root - INFO - Request 132ebd70-3e07-401c-847e-462543483d2a completado: 500
+2025-07-13 21:43:04,446 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:43:04] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:43:06,472 - root - INFO - Request db3d464d-8119-48bd-92bd-74b33647e340 iniciado: GET /api/stats
+2025-07-13 21:43:07,476 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:43:07,490 - root - INFO - Request db3d464d-8119-48bd-92bd-74b33647e340 completado: 500
+2025-07-13 21:43:07,491 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:43:07] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:43:09,526 - root - INFO - Request e06df4c2-ae87-44ba-9867-04c41e96169e iniciado: GET /api/stats
+2025-07-13 21:43:10,529 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:43:10,543 - root - INFO - Request e06df4c2-ae87-44ba-9867-04c41e96169e completado: 500
+2025-07-13 21:43:10,544 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:43:10] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:43:12,591 - root - INFO - Request c3cda12f-c1f5-477f-a5ec-1374d6619060 iniciado: GET /api/stats
+2025-07-13 21:43:13,596 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:43:13,608 - root - INFO - Request c3cda12f-c1f5-477f-a5ec-1374d6619060 completado: 500
+2025-07-13 21:43:13,610 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:43:13] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:43:15,656 - root - INFO - Request f6d40717-aa33-4f9f-8a92-4a92c2af7f7e iniciado: GET /api/stats
+2025-07-13 21:43:16,660 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:43:16,673 - root - INFO - Request f6d40717-aa33-4f9f-8a92-4a92c2af7f7e completado: 500
+2025-07-13 21:43:16,673 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:43:16] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:43:18,721 - root - INFO - Request eef3d35b-0a45-4530-92a3-26812df3d51a iniciado: GET /api/stats
+2025-07-13 21:43:19,725 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:43:19,738 - root - INFO - Request eef3d35b-0a45-4530-92a3-26812df3d51a completado: 500
+2025-07-13 21:43:19,738 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:43:19] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:43:21,788 - root - INFO - Request 566423cf-7f9c-4371-9b52-5cb428a438dc iniciado: GET /api/stats
+2025-07-13 21:43:22,792 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:43:22,805 - root - INFO - Request 566423cf-7f9c-4371-9b52-5cb428a438dc completado: 500
+2025-07-13 21:43:22,806 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:43:22] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:43:24,836 - root - INFO - Request 0250c71d-194e-41d2-9341-9577a1667320 iniciado: GET /api/stats
+2025-07-13 21:43:25,842 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:43:25,858 - root - INFO - Request 0250c71d-194e-41d2-9341-9577a1667320 completado: 500
+2025-07-13 21:43:25,859 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:43:25] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:43:27,883 - root - INFO - Request 23c6a7e0-e8f6-4efd-9b9b-d44eeb6a207b iniciado: GET /api/stats
+2025-07-13 21:43:28,888 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:43:28,901 - root - INFO - Request 23c6a7e0-e8f6-4efd-9b9b-d44eeb6a207b completado: 500
+2025-07-13 21:43:28,902 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:43:28] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-13 21:43:30,937 - root - INFO - Request e9eaa2f1-2dba-4dd6-8628-d646b31c804c iniciado: GET /api/stats
+2025-07-13 21:43:31,940 - root - ERROR - Error obteniendo disk usage: argument 1 (impossible<bad format char>)
+2025-07-13 21:43:31,954 - root - INFO - Request e9eaa2f1-2dba-4dd6-8628-d646b31c804c completado: 500
+2025-07-13 21:43:31,955 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:43:31] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
